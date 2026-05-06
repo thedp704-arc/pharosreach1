@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#C6A85A" stroke-width="1.5" opacity="0.8"/>
+  <g fill="#C6A85A">
+    <!-- Lighthouse Body -->
+    <path d="M42 85 L58 85 L54 45 L46 45 Z" />
+    <path d="M40 90 L60 90 L58 85 L42 85 Z" />
+    <!-- Light Room -->
+    <rect x="45" y="38" width="10" height="7" />
+    <!-- Roof -->
+    <path d="M43 38 L57 38 L50 28 Z" />
+    <!-- Top Tip -->
+    <circle cx="50" cy="26" r="1.5" />
+    <!-- Light Beams -->
+    <path d="M40 41 L5 40 L5 42 Z" opacity="0.9"/>
+    <path d="M60 41 L95 40 L95 42 Z" opacity="0.9"/>
+  </g>
+</svg>
