@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { RoyalDivider } from '@/components/royal-divider'
@@ -31,10 +32,16 @@ export default function UnsolicitedDesignsPage() {
           <section className="py-20 px-4 md:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="aspect-video bg-[#1F3A34]/30 border border-border flex items-center justify-center group hover:border-accent/30 transition-colors duration-500 overflow-hidden relative">
+                <Link 
+                  href="/monarch"
+                  className="aspect-video bg-[#1F3A34]/30 border border-border flex items-center justify-center group hover:border-accent/30 transition-colors duration-500 overflow-hidden relative cursor-pointer"
+                >
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(198,168,90,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                   <span className="text-label-muted">Concept 01 - Coming Soon</span>
-                </div>
+                   <div className="flex flex-col items-center gap-2">
+                     <span className="text-accent text-lg font-serif italic tracking-tighter group-hover:scale-110 transition-transform duration-500">Monarch</span>
+                     <span className="text-label-muted text-[10px]">Sneaker Concept - Live Demo</span>
+                   </div>
+                </Link>
                 <div className="aspect-video bg-[#1F3A34]/30 border border-border flex items-center justify-center group hover:border-accent/30 transition-colors duration-500 overflow-hidden relative">
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(198,168,90,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                    <span className="text-label-muted">Concept 02 - Coming Soon</span>
