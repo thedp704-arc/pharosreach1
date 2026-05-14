@@ -82,20 +82,20 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
   }
 
   return (
-    <footer id="contact" className="bg-[#091818] border-t-[0.5px] border-[#C6A85A]/20 py-32 md:py-40 px-4 md:px-8 scroll-mt-24">
+    <footer id="contact" className="bg-[#091818] border-t-[0.5px] border-border section-spacing px-4 md:px-8 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {showContactForm && (
           <div className="grid md:grid-cols-2 gap-16 mb-24">
-            <div>
-              <h3 className="font-serif text-foreground text-2xl font-medium mb-4 tracking-tighter">
+            <div className="element-spacing-medium">
+              <h3 className="section-card-title">
                 Pharos Reach
               </h3>
-              <p className="text-[#8FA39B] text-base leading-relaxed font-light">
+              <p className="text-p-small">
                 Expert strategy, unbundled. Strategic consultancy for global fashion and e-commerce leaders seeking transformation at scale.
               </p>
 
-              <div className="mt-6 space-y-2">
-                <p className="text-[#8FA39B] text-sm font-light">
+              <div className="space-y-2">
+                <p className="text-p-small">
                   <span className="text-foreground block mb-1">dev@pharosreach.com</span>
                   Global offices available
                 </p>
@@ -112,17 +112,17 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                 />
               </div>
             </div>
-            <div className="space-y-4">
-              <h4 className="font-serif text-foreground text-xl font-medium tracking-tighter">
+            <div className="element-spacing-medium">
+              <h4 className="section-card-title">
                 Send a message
               </h4>
-              <p className="text-[#8FA39B] text-sm leading-relaxed font-light">
+              <p className="text-p-small">
                 Tell us what you're working on and we'll respond within 1-2 business days.
               </p>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="contact-name" className="text-xs uppercase tracking-widest font-semibold">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="space-y-3">
+                  <Label htmlFor="contact-name" className="text-label">
                     Name
                   </Label>
                   <Input
@@ -136,8 +136,8 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                   )}
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="contact-email" className="text-xs uppercase tracking-widest font-semibold">
+                <div className="space-y-3">
+                  <Label htmlFor="contact-email" className="text-label">
                     Email
                   </Label>
                   <Input
@@ -151,8 +151,8 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                   )}
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="contact-company" className="text-xs uppercase tracking-widest font-semibold">
+                <div className="space-y-3">
+                  <Label htmlFor="contact-company" className="text-label">
                     Company (optional)
                   </Label>
                   <Input
@@ -162,8 +162,8 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="contact-message" className="text-xs uppercase tracking-widest font-semibold">
+                <div className="space-y-3">
+                  <Label htmlFor="contact-message" className="text-label">
                     Message
                   </Label>
                   <Textarea
@@ -181,7 +181,7 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-button-cta text-[#EDE8D0] px-6 py-3 rounded-none text-xs uppercase tracking-widest font-semibold hover:bg-[#E0C878] transition-colors duration-500 w-fit disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-button-cta text-[#EDE8D0] px-8 py-4 rounded-none btn-text hover:bg-[#E0C878] transition-colors duration-500 w-fit disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(198,168,90,0.15)]"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -190,25 +190,25 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
           </div>
         )}
         
-        <div className="border-t-[0.5px] border-[#C6A85A]/20 pt-12 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-[#8FA39B] text-xs font-light">
+        <div className="border-t-[0.5px] border-border pt-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-label-muted normal-case font-light">
             © {currentYear} Pharos Reach. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <a href="#" className="text-[#8FA39B] hover:text-accent text-xs font-light transition-colors">
+            <a href="#" className="text-label-muted normal-case font-light hover:text-accent transition-colors">
               Privacy
             </a>
-            <a href="#" className="text-[#8FA39B] hover:text-accent text-xs font-light transition-colors">
+            <a href="#" className="text-label-muted normal-case font-light hover:text-accent transition-colors">
               Terms
             </a>
-            <a href="#" className="text-[#8FA39B] hover:text-accent text-xs font-light transition-colors">
+            <a href="#" className="text-label-muted normal-case font-light hover:text-accent transition-colors">
               LinkedIn
             </a>
             <a
               href="https://instagram.com/pharosreach"
               target="_blank"
               rel="noreferrer"
-              className="text-[#8FA39B] hover:text-accent text-xs font-light transition-colors"
+              className="text-label-muted normal-case font-light hover:text-accent transition-colors"
             >
               Instagram
             </a>

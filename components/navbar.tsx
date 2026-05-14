@@ -42,7 +42,7 @@ export function Navbar() {
               <Link 
                 key={link.href}
                 href={link.href} 
-                className="text-[#8FA39B] hover:text-foreground transition-colors text-xs uppercase tracking-[0.15em] font-semibold"
+                className="nav-link"
               >
                 {link.label}
               </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
 
           <Link 
             href="/exclusive-plan" 
-            className="hidden lg:inline-flex bg-transparent text-[#091818] hover:bg-button-cta hover:text-[#EDE8D0] px-6 py-2 rounded-none text-xs uppercase tracking-widest font-semibold transition-all duration-500"
+            className="hidden lg:inline-flex bg-transparent text-[#091818] hover:bg-button-cta hover:text-[#EDE8D0] px-6 py-2 rounded-none btn-text transition-all duration-500"
           >
             ooh what's this
           </Link>
@@ -60,21 +60,21 @@ export function Navbar() {
           <div className="flex md:hidden items-center gap-4">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-[#8FA39B]">
+                <Button variant="ghost" size="icon" className="text-muted">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-[#091918] border-[#C6A85A]/20 text-[#EDEDED] w-[300px]">
+              <SheetContent side="right" className="bg-[#091918] border-border text-foreground w-[300px]">
                 <SheetHeader>
-                  <SheetTitle className="text-[#C6A85A] text-left">Navigation</SheetTitle>
+                  <SheetTitle className="text-accent text-left font-serif">Navigation</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
                     <Link 
                       key={link.href}
                       href={link.href} 
-                      className="text-[#8FA39B] hover:text-[#C6A85A] transition-colors text-sm uppercase tracking-[0.15em] font-semibold"
+                      className="nav-link text-sm"
                     >
                       {link.label}
                     </Link>

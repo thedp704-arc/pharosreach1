@@ -11,7 +11,7 @@ import { RoyalDivider } from '@/components/royal-divider'
 
 export default function Home() {
   return (
-    <main className="bg-[#091818] min-h-screen text-[#EDEDED]">
+    <main className="bg-background min-h-screen text-foreground">
       <Navbar />
       <HeroSection />
       

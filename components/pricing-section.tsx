@@ -52,7 +52,7 @@ function ServiceList({
   highlightMaintenanceNote?: boolean
 }) {
   return (
-    <ul className="space-y-3 text-[#8FA39B] font-light">
+    <ul className="space-y-4 text-p-small">
       {services.map((s) => {
         const isSelectionMode = included === 'any2' || included === 'any4'
         const isIncluded =
@@ -63,25 +63,25 @@ function ServiceList({
               : false
 
         return (
-          <li key={s.key} className="flex gap-3">
+          <li key={s.key} className="flex gap-4">
             <span
               className={
                 isSelectionMode
-                  ? 'text-[#C6A85A]/70 mt-[2px]'
+                  ? 'text-accent/50 mt-[2px]'
                   : isIncluded
                     ? 'text-accent mt-[2px]'
-                    : 'text-[#C6A85A]/40 mt-[2px]'
+                    : 'text-accent/30 mt-[2px]'
               }
             >
               ✓
             </span>
-            <span className={isSelectionMode ? 'text-[#8FA39B]' : ''}>
+            <span className={isSelectionMode ? 'text-muted' : ''}>
               <span className="text-foreground font-light">{s.name}</span>
-              <span className="block text-[#8FA39B] text-sm mt-1">
+              <span className="block text-muted text-sm mt-1">
                 {s.description}
               </span>
               {highlightMaintenanceNote && s.key === 'website_maintenance' && (
-                <span className="block text-sm mt-2 text-accent">
+                <span className="block text-sm mt-2 text-accent italic">
                   Next month maintenance is $100/month.
                 </span>
               )}
@@ -114,56 +114,56 @@ function PlanCard({
 }) {
   return (
     <div
-      className="group border-[0.5px] border-[#C6A85A]/25 p-8 relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(198,168,90,0.18)_0%,_transparent_55%),linear-gradient(to_bottom,rgba(31,58,52,0.85),rgba(15,26,23,0.95))] shadow-[0_0_0_1px_rgba(198,168,90,0.08),0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_0_1px_rgba(198,168,90,0.2),0_40px_100px_rgba(198,168,90,0.2)]"
+      className="group border-[0.5px] border-[#C6A85A]/25 p-10 relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(198,168,90,0.18)_0%,_transparent_55%),linear-gradient(to_bottom,rgba(31,58,52,0.85),rgba(15,26,23,0.95))] shadow-[0_0_0_1px_rgba(198,168,90,0.08),0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_0_1px_rgba(198,168,90,0.2),0_40px_100px_rgba(198,168,90,0.2)]"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(198,168,90,0.25)_0%,transparent_55%),radial-gradient(circle_at_85%_30%,rgba(15,26,23,0)_0%,rgba(198,168,90,0.1)_50%,transparent_75%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute -inset-px bg-gradient-to-br from-[#C6A85A]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {badge && (
-        <div className="absolute top-5 right-5 bg-[#C6A85A]/20 border border-[#C6A85A]/40 text-accent text-xs uppercase tracking-widest px-3 py-2 font-semibold backdrop-blur shadow-[0_0_15px_rgba(198,168,90,0.2)] group-hover:shadow-[0_0_25px_rgba(198,168,90,0.4)] transition-shadow duration-500">
+        <div className="absolute top-6 right-6 bg-[#C6A85A]/20 border border-[#C6A85A]/40 text-accent text-[10px] uppercase tracking-widest px-3 py-2 font-semibold backdrop-blur shadow-[0_0_15px_rgba(198,168,90,0.2)] group-hover:shadow-[0_0_25px_rgba(198,168,90,0.4)] transition-shadow duration-500">
           {badge}
         </div>
       )}
 
-      <h3 className="relative z-10 font-serif text-foreground text-2xl font-medium tracking-tighter group-hover:text-white transition-colors">
+      <h3 className="relative z-10 section-card-title group-hover:text-white transition-colors mb-6">
         {title}
       </h3>
-      <div className="relative z-10 mt-4 flex items-baseline gap-3">
-        <div className="text-foreground text-4xl font-serif font-medium tracking-tighter drop-shadow-[0_0_10px_rgba(198,168,90,0.15)] group-hover:drop-shadow-[0_0_20px_rgba(198,168,90,0.3)] transition-all">
+      <div className="relative z-10 flex items-baseline gap-3 mb-6">
+        <div className="text-foreground text-5xl font-serif font-medium tracking-tighter drop-shadow-[0_0_10px_rgba(198,168,90,0.15)] group-hover:drop-shadow-[0_0_20px_rgba(198,168,90,0.3)] transition-all">
           {price}
         </div>
-        <div className="text-[#8FA39B] text-sm font-light uppercase tracking-[0.15em]">
+        <div className="text-label-muted">
           USD
         </div>
       </div>
-      <p className="relative z-10 text-[#8FA39B] text-base leading-relaxed font-light mt-4">
+      <p className="relative z-10 text-p-small mb-6">
         {description}
       </p>
 
       {note && (
-        <p className="relative z-10 text-accent text-sm leading-relaxed font-light mt-4">
+        <p className="relative z-10 text-accent text-sm leading-relaxed font-light mb-6 italic">
           {note}
         </p>
       )}
 
-      <div className="relative z-10 mt-8">
-        <div className="text-[#8FA39B] text-xs uppercase tracking-[0.15em] font-semibold mb-4">
+      <div className="relative z-10 mt-10 element-spacing-medium">
+        <div className="text-label">
           Services
         </div>
         {included === 'any2' && (
-          <p className="text-[#8FA39B] text-sm font-light mb-4">
-            Choose any <span className="text-foreground font-light">2</span> of the
+          <p className="text-p-small italic">
+            Choose any <span className="text-foreground font-medium">2</span> of the
             following services.
           </p>
         )}
         {included === 'any4' && (
-          <p className="text-[#8FA39B] text-sm font-light mb-4">
-            Choose any <span className="text-foreground font-light">4</span> of
+          <p className="text-p-small italic">
+            Choose any <span className="text-foreground font-medium">4</span> of
             the following services.
           </p>
         )}
         {included === 'all' && (
-          <p className="text-[#8FA39B] text-sm font-light mb-4">
-            Includes <span className="text-foreground font-light">all 6</span>{" "}
+          <p className="text-p-small italic">
+            Includes <span className="text-foreground font-medium">all 6</span>{" "}
             services.
           </p>
         )}
@@ -175,10 +175,10 @@ function PlanCard({
         />
       </div>
 
-      <div className="relative z-10 mt-8">
+      <div className="relative z-10 mt-10">
         <a
           href="#contact"
-          className="inline-flex items-center justify-center bg-button-cta text-[#EDE8D0] px-6 py-3 rounded-none text-xs uppercase tracking-widest font-semibold hover:bg-[#E0C878] transition-colors duration-500 w-fit ring-1 ring-[#C6A85A]/35 hover:ring-[#C6A85A]/55"
+          className="inline-flex items-center justify-center bg-button-cta text-[#EDE8D0] px-8 py-4 rounded-none btn-text hover:bg-[#E0C878] transition-colors duration-500 w-full ring-1 ring-[#C6A85A]/35 hover:ring-[#C6A85A]/55"
         >
           {cta}
         </a>
@@ -197,21 +197,30 @@ export function PricingSection({ showTitle = true, showBorder = true }: { showTi
     <section
       id="pricing"
       ref={ref}
-      className={`relative py-40 md:py-48 px-4 md:px-8 scroll-mt-24 overflow-hidden ${showBorder ? 'border-t-[0.5px] border-[#C6A85A]/20' : ''}`}
+      className={`relative section-spacing px-4 md:px-8 scroll-mt-24 overflow-hidden ${showBorder ? 'border-t-[0.5px] border-border' : ''}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(198,168,90,0.18)_0%,transparent_55%),radial-gradient(circle_at_0%_60%,rgba(15,26,23,0)_0%,rgba(198,168,90,0.06)_40%,transparent_70%)]" />
-      <div className={`max-w-7xl mx-auto transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(198,168,90,0.18)_0%,transparent_55%),radial-gradient(circle_at_0%_55%,rgba(15,26,23,0)_0%,rgba(198,168,90,0.1)_45%,transparent_70%)]" />
+      <div className="max-w-7xl mx-auto relative z-10">
         {showTitle && (
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-16 bg-[#C6A85A]/40" />
-              <h2 className="font-serif text-foreground text-4xl md:text-5xl font-medium tracking-tighter">
-                Pricing
-              </h2>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-4 mb-8">
+                <div className="h-[1px] w-16 bg-[#C6A85A]/40" />
+                <h2 className="section-title">
+                  Transparent Pricing
+                </h2>
+              </div>
+              <p className="text-p">
+                Professional services unbundled. High-end infrastructure and software execution with total price clarity.
+              </p>
             </div>
-            <p className="text-[#8FA39B] text-lg mb-16 max-w-2xl font-light">
-              Choose the scope you need today, with a clear path to scale.
-            </p>
+            
+            <div className="max-w-xs space-y-4">
+              <p className="text-label-muted leading-relaxed">
+                All plans include technical consultation and direct access to our development team.
+              </p>
+              <div className="h-[0.5px] w-full bg-border" />
+            </div>
           </div>
         )}
 
