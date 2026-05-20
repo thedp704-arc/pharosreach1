@@ -9,8 +9,8 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"], 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700"], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'Pharos Reach - Strategic Consultancy for Fashion & E-commerce',
-  description: 'A strategic partner for global fashion and e-commerce transformation, driving excellence through innovation.',
+  title: 'Pharos Reach - Fullstack Development & Custom Systems',
+  description: 'Specializing in fullstack development, CRM management, and custom systems for global businesses. We build the digital infrastructure your brand deserves.',
   generator: 'v0.app',
   icons: {
     icon: [

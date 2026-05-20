@@ -10,19 +10,19 @@ export function HeroSection() {
           <div className="element-spacing-small relative">
             <div className="absolute inset-0 bg-accent/5 blur-3xl rounded-full -z-10 scale-150" />
             <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#C6A85A]/5 border border-[#C6A85A]/15 rounded-none mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(198,168,90,0.05)]">
-              <span className="text-label">Expert Tools, Unbundled</span>
+              <span className="text-label">Fullstack Development & Custom Systems</span>
             </div>
             <h1 className="hero-title max-w-5xl mx-auto">
-              Websites that make people trust you in seconds.
+              We build systems that scale your business.
             </h1>
             <p className="hero-subtitle mx-auto">
-              We build fast, clean websites and systems that turn visitors into enquiries.
+              From custom fullstack development to automated CRM management, we create the digital infrastructure your brand deserves.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <a href="/contact" className="bg-button-cta text-[#EDE8D0] px-10 py-5 rounded-none btn-text hover:bg-[#E0C878] transition-colors duration-500 w-full sm:w-auto text-center shadow-[0_0_25px_rgba(198,168,90,0.25)] hover:shadow-[0_0_40px_rgba(198,168,90,0.4)] relative group overflow-hidden">
-              <span className="relative z-10">Get Your Website</span>
+              <span className="relative z-10">Start Your System</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </a>
             <a href="/unsolicited-designs" className="border border-[#C6A85A]/30 text-foreground px-10 py-5 rounded-none btn-text hover:bg-[#C6A85A]/10 transition-colors duration-500 w-full sm:w-auto text-center backdrop-blur-sm hover:shadow-[0_0_20px_rgba(198,168,90,0.1)]">

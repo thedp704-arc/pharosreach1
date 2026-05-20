@@ -13,48 +13,35 @@ type Service = {
 
 const services: Service[] = [
   {
-    key: 'website_creation',
-    name: 'Website creation',
-    description: 'Design + development for a modern, fast website.',
+    key: 'fullstack_dev',
+    name: 'Fullstack Development',
+    description: 'Custom web applications and complex systems.',
   },
   {
-    key: 'website_maintenance',
-    name: 'Website maintenance',
-    description: 'Updates, fixes, and ongoing support.',
+    key: 'crm_management',
+    name: 'CRM Management',
+    description: 'Ongoing management and optimization of your CRM.',
   },
   {
-    key: 'crm_setup',
-    name: 'CRM setup',
-    description: 'Configure CRM to capture and manage leads.',
+    key: 'website_management',
+    name: 'Website Management',
+    description: 'Maintenance, updates, and support for existing sites.',
   },
   {
-    key: 'ecommerce_building',
-    name: 'E-commerce building',
-    description: 'Build your storefront and connect key integrations.',
-  },
-  {
-    key: 'data_handling',
-    name: 'Data handling',
-    description: 'Set up data flows and analytics readiness.',
-  },
-  {
-    key: 'payment_gateway_setup',
-    name: 'Payment gateway setup',
-    description: 'Integrate and test payment gateways safely.',
+    key: 'systems_creation',
+    name: 'Systems Creation',
+    description: 'Building custom automated systems for your business.',
   },
 ]
 
 function ServiceList({
   included,
-  highlightMaintenanceNote,
 }: {
-  included: Set<string> | 'any2' | 'any4' | 'all'
-  highlightMaintenanceNote?: boolean
+  included: Set<string> | 'all' | 'custom'
 }) {
   return (
     <ul className="space-y-4 text-p-small">
       {services.map((s) => {
-        const isSelectionMode = included === 'any2' || included === 'any4'
         const isIncluded =
           included === 'all'
             ? true
@@ -62,29 +49,17 @@ function ServiceList({
               ? included.has(s.key)
               : false
 
+        if (included === 'custom' && !['fullstack_dev', 'systems_creation'].includes(s.key)) return null;
+        if (included !== 'all' && included !== 'custom' && !included.has(s.key)) return null;
+
         return (
           <li key={s.key} className="flex gap-4">
-            <span
-              className={
-                isSelectionMode
-                  ? 'text-accent/50 mt-[2px]'
-                  : isIncluded
-                    ? 'text-accent mt-[2px]'
-                    : 'text-accent/30 mt-[2px]'
-              }
-            >
-              ✓
-            </span>
-            <span className={isSelectionMode ? 'text-muted' : ''}>
+            <span className="text-accent mt-[2px]">✓</span>
+            <span>
               <span className="text-foreground font-light">{s.name}</span>
               <span className="block text-muted text-sm mt-1">
                 {s.description}
               </span>
-              {highlightMaintenanceNote && s.key === 'website_maintenance' && (
-                <span className="block text-sm mt-2 text-accent italic">
-                  Next month maintenance is $100/month.
-                </span>
-              )}
             </span>
           </li>
         )
@@ -101,20 +76,18 @@ function PlanCard({
   included,
   cta,
   note,
-  highlightMaintenanceNote,
 }: {
   title: string
   price: string
   badge?: string
   description: string
-  included: Set<string> | 'any2' | 'any4' | 'all'
+  included: Set<string> | 'all' | 'custom'
   cta: string
   note?: string
-  highlightMaintenanceNote?: boolean
 }) {
   return (
     <div
-      className="group border-[0.5px] border-[#C6A85A]/25 p-10 relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(198,168,90,0.18)_0%,_transparent_55%),linear-gradient(to_bottom,rgba(31,58,52,0.85),rgba(15,26,23,0.95))] shadow-[0_0_0_1px_rgba(198,168,90,0.08),0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_0_1px_rgba(198,168,90,0.2),0_40px_100px_rgba(198,168,90,0.2)]"
+      className="group border-[0.5px] border-[#C6A85A]/25 p-10 relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(198,168,90,0.18)_0%,_transparent_55%),linear-gradient(to_bottom,rgba(31,58,52,0.85),rgba(15,26,23,0.95))] shadow-[0_0_0_1px_rgba(198,168,90,0.08),0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_0_1px_rgba(198,168,90,0.2),0_40px_100px_rgba(198,168,90,0.2)] flex flex-col h-full"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(198,168,90,0.25)_0%,transparent_55%),radial-gradient(circle_at_85%_30%,rgba(15,26,23,0)_0%,rgba(198,168,90,0.1)_50%,transparent_75%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute -inset-px bg-gradient-to-br from-[#C6A85A]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -131,9 +104,11 @@ function PlanCard({
         <div className="text-foreground text-5xl font-serif font-medium tracking-tighter drop-shadow-[0_0_10px_rgba(198,168,90,0.15)] group-hover:drop-shadow-[0_0_20px_rgba(198,168,90,0.3)] transition-all">
           {price}
         </div>
-        <div className="text-label-muted">
-          USD
-        </div>
+        {price !== 'Custom' && (
+          <div className="text-label-muted">
+            USD / month
+          </div>
+        )}
       </div>
       <p className="relative z-10 text-p-small mb-6">
         {description}
@@ -145,33 +120,13 @@ function PlanCard({
         </p>
       )}
 
-      <div className="relative z-10 mt-10 element-spacing-medium">
-        <div className="text-label">
-          Services
+      <div className="relative z-10 mt-auto pt-10">
+        <div className="text-label mb-6">
+          Focus Areas
         </div>
-        {included === 'any2' && (
-          <p className="text-p-small italic">
-            Choose any <span className="text-foreground font-medium">2</span> of the
-            following services.
-          </p>
-        )}
-        {included === 'any4' && (
-          <p className="text-p-small italic">
-            Choose any <span className="text-foreground font-medium">4</span> of
-            the following services.
-          </p>
-        )}
-        {included === 'all' && (
-          <p className="text-p-small italic">
-            Includes <span className="text-foreground font-medium">all 6</span>{" "}
-            services.
-          </p>
-        )}
-
-        {/* For selection modes, we still list all services (muted) so clients can see options. */}
+        
         <ServiceList
-          included={included === 'all' ? 'all' : included}
-          highlightMaintenanceNote={highlightMaintenanceNote}
+          included={included}
         />
       </div>
 
@@ -189,9 +144,8 @@ function PlanCard({
 
 export function PricingSection({ showTitle = true, showBorder = true }: { showTitle?: boolean, showBorder?: boolean }) {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 })
-  const basicIncluded = 'any2' as const
-  const deluxeIncluded = 'any4' as const
-  const premierIncluded = 'all' as const
+  const crmManagementIncluded = new Set(['crm_management'])
+  const websiteManagementIncluded = new Set(['website_management'])
 
   return (
     <section
@@ -207,17 +161,17 @@ export function PricingSection({ showTitle = true, showBorder = true }: { showTi
               <div className="inline-flex items-center gap-4 mb-8">
                 <div className="h-[1px] w-16 bg-[#C6A85A]/40" />
                 <h2 className="section-title">
-                  Transparent Pricing
+                  Monthly Retainers & Custom Systems
                 </h2>
               </div>
               <p className="text-p">
-                Professional services unbundled. High-end infrastructure and software execution with total price clarity.
+                Professional management for your existing assets, and custom-built systems for your future growth.
               </p>
             </div>
             
             <div className="max-w-xs space-y-4">
               <p className="text-label-muted leading-relaxed">
-                All plans include technical consultation and direct access to our development team.
+                We focus on fullstack development and creating integrated systems that work for you.
               </p>
               <div className="h-[0.5px] w-full bg-border" />
             </div>
@@ -226,26 +180,27 @@ export function PricingSection({ showTitle = true, showBorder = true }: { showTi
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           <PlanCard
-            title="Basic"
-            price="$400"
-            description="Perfect for early-stage launches."
-            included={basicIncluded}
-            cta="Request Basic Plan"
+            title="CRM Management"
+            price="$150"
+            description="Complete oversight and optimization of your CRM systems."
+            included={crmManagementIncluded}
+            cta="Start CRM Retainer"
           />
           <PlanCard
-            title="Deluxe"
-            price="$600"
-            badge="Most Popular"
-            description="For growing teams that need deeper delivery."
-            included={deluxeIncluded}
-            cta="Request Deluxe Plan"
+            title="Website Management"
+            price="$100"
+            badge="For Existing Sites"
+            description="Reliable maintenance and updates for your current web presence."
+            included={websiteManagementIncluded}
+            cta="Start Website Retainer"
           />
           <PlanCard
-            title="Premier"
-            price="$850"
-            description="Everything included for full transformation."
-            included={premierIncluded}
-            cta="Request Premier Plan"
+            title="Custom Systems"
+            price="Custom"
+            description="Fullstack development, website creation, and CRM builds."
+            included="custom"
+            cta="Book Discovery Call"
+            note="Price based on work volume and timeline. Faster delivery or higher complexity will adjust the investment."
           />
         </div>
       </div>

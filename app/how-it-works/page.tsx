@@ -4,9 +4,9 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Technical Workflow | Pharos Reach',
-  description: 'Our structured technical workflow for custom software development, ecommerce systems, and scalable infrastructure. Focused on clarity, execution, and long-term scalability.',
-  keywords: 'custom software development, ecommerce systems, scalable infrastructure, automation systems, technical project workflows',
+  title: 'Systems Creation & Fullstack Workflow | Pharos Reach',
+  description: 'Our structured process for building integrated systems, fullstack development, and automated workflows. Focused on creating a cohesive digital infrastructure for your brand.',
+  keywords: 'fullstack development, systems creation, CRM management, automated workflows, custom digital infrastructure, technical workflow',
 }
 
 export default function HowItWorksPage() {
@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
               How We Work
             </h1>
             <p className="hero-subtitle mx-auto">
-              Every project is approached with a structured development process focused on clarity, scalability, and long-term execution.
+              Our structured process for fullstack development and systems creation, focused on building integrated digital infrastructures that scale.
             </p>
           </div>
         </div>
@@ -69,9 +69,9 @@ export default function HowItWorksPage() {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 relative">
               <div className="flex-1 md:text-right">
                 <div className="md:pr-12 element-spacing-small">
-                  <h3 className="section-subtitle">03. Proposal & Scope</h3>
+                  <h3 className="section-subtitle">03. Custom Proposal</h3>
                   <p className="text-p">
-                    We provide a detailed technical proposal outlining the full breadth of work. Timelines and project parameters are established based on technical complexity, system integrations, and specific delivery requirements.
+                    We provide a tailored proposal based on the amount of work and your desired timeline. If you need more work in less time, we charge a premium for the accelerated delivery. If you have a longer timeline for the same work, we adjust the investment accordingly.
                   </p>
                 </div>
               </div>
@@ -85,9 +85,9 @@ export default function HowItWorksPage() {
               <div className="relative z-10 w-4 h-4 rounded-full bg-accent shadow-[0_0_15px_rgba(198,168,90,0.5)] mt-2" />
               <div className="flex-1 md:text-left">
                 <div className="md:pl-12 element-spacing-small">
-                  <h3 className="section-subtitle">04. Development</h3>
+                  <h3 className="section-subtitle">04. Fullstack Development</h3>
                   <p className="text-p">
-                    Execution begins with a focus on clean, scalable code. We maintain transparent communication through regular progress updates and collaborative feedback loops, ensuring the build remains agile and precise.
+                    Execution begins with a focus on building a cohesive system. We don't just write code; we architect the digital infrastructure that integrates your website, CRM, and automated workflows into one powerful engine.
                   </p>
                 </div>
               </div>
@@ -97,9 +97,9 @@ export default function HowItWorksPage() {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 relative">
               <div className="flex-1 md:text-right">
                 <div className="md:pr-12 element-spacing-small">
-                  <h3 className="section-subtitle">05. Launch & Support</h3>
+                  <h3 className="section-subtitle">05. Launch & Retain</h3>
                   <p className="text-p">
-                    Following rigorous testing and optimization, we oversee the deployment process. Our partnership continues post-launch with ongoing support and scalability options to ensure long-term system integrity.
+                    After a successful launch, we transition to our monthly retainer model. We manage your systems and website ongoing, ensuring everything stays updated, secure, and optimized for your continued growth.
                   </p>
                 </div>
               </div>

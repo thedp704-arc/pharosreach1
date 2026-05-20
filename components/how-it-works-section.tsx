@@ -25,7 +25,7 @@ export function HowItWorksSection({ showTitle = true }: { showTitle?: boolean })
             </div>
 
             <div className="relative z-10 text-p-small max-w-xl lg:text-base">
-              Pick the plan that fits your goals, then select the services you need (if applicable).
+              From discovery to launch, our process is designed to build a custom system that works for you.
             </div>
           </div>
         )}
@@ -33,23 +33,23 @@ export function HowItWorksSection({ showTitle = true }: { showTitle?: boolean })
         <div className="grid md:grid-cols-2 gap-8">
           <Step
             number="01"
-            title="Choose your plan"
-            description="Basic, Deluxe, or Premier package."
+            title="Discovery Call"
+            description="We start with a deep dive into your business to understand your goals, current systems, and vision for the future."
           />
           <Step
             number="02"
-            title="Confirm requirements"
-            description="We gather key details, access needs, and scope so we can start with clarity."
+            title="Custom Proposal"
+            description="Based on the work volume and your desired timeline, we provide a tailored price. Faster delivery or higher complexity will adjust the investment."
           />
           <Step
             number="03"
-            title="Build & integrate"
-            description="Your selected services are delivered in focused milestones."
+            title="Fullstack Development"
+            description="Our team builds your custom system or manages your existing assets with a focus on long-term scalability and performance."
           />
           <Step
             number="04"
-            title="Review & launch"
-            description="We validate everything, then launch and provide a short handover."
+            title="Launch & Retain"
+            description="We launch your new system and transition into a monthly retainer to ensure your digital ecosystem stays at its peak."
           />
         </div>
       </div>

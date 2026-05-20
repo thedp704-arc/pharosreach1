@@ -15,50 +15,50 @@ export function PhilosophySection() {
         <div className="element-spacing-large">
           <div className="element-spacing-medium">
             <p className="text-p-large">
-              "At Pharos Reach, we believe that exceptional strategy emerges from a deep understanding of market dynamics, consumer behavior, and organizational capability."
+              "At Pharos Reach, we believe that exceptional growth emerges from integrated systems, fullstack execution, and a commitment to building for the long term."
             </p>
             <p className="text-p">
-              We are not consultants in the traditional sense—we are strategic architects who work hand-in-hand with visionary leaders to chart a course through complex, rapidly evolving global markets.
+              We are not consultants in the traditional sense—we are digital architects who build the infrastructure visionary leaders need to dominate their markets.
             </p>
           </div>
 
           <div className="element-spacing-medium">
             <h3 className="section-subtitle">
-              Born from Frustration, Built for Freedom
+              Systems Over Templates
             </h3>
             <p className="text-p">
-              Our agency was founded on a simple realization: the digital landscape is over-complicated. When our founders attempted to scale their own ventures online, they were met with rigid tools and "all-or-nothing" service bundles. They were forced to pay premiums for bloated packages filled with features they didn’t need, while the specific solutions they did need remained out of reach.
+              Our agency was founded on a simple realization: the digital landscape is fragmented. Most businesses struggle with disconnected tools, inefficient workflows, and websites that don't talk to their CRMs.
             </p>
             <p className="text-p font-medium text-foreground tracking-wide">
-              We decided to change that.
+              We decided to build systems instead of just sites.
             </p>
           </div>
 
           <div className="element-spacing-medium">
             <h3 className="section-subtitle">
-              The Pharos Edge: Precision over Bundles
+              The Pharos Edge: Fullstack Integration
             </h3>
             <p className="text-p">
-              We believe you shouldn't have to buy the whole toolbox just to get a single wrench. Our philosophy is rooted in <span className="text-foreground font-normal">true customization</span>:
+              We believe your digital presence should be a cohesive engine. Our philosophy is rooted in <span className="text-foreground font-normal">integrated systems</span>:
             </p>
             
             <div className="grid gap-10 mt-8">
               <div className="element-spacing-small">
-                <h4 className="text-label">Tailored Freedom</h4>
+                <h4 className="text-label">Integrated Infrastructure</h4>
                 <p className="text-p-small">
-                  We give you the power to choose exactly what your business requires. No forced bundles, no hidden premiums for unused services.
+                  We focus on fullstack development that connects your frontend, backend, and CRM into one seamless system.
                 </p>
               </div>
               <div className="element-spacing-small">
-                <h4 className="text-label">Strategic Agility</h4>
+                <h4 className="text-label">Long-term Scalability</h4>
                 <p className="text-p-small">
-                  Our approach combines financial acuity with creative vision to identify untapped opportunities and build sustainable competitive advantages across borders.
+                  Our monthly retainers ensure your systems evolve with your business, providing ongoing optimization and management.
                 </p>
               </div>
               <div className="element-spacing-small">
-                <h4 className="text-label">Global Reach, Local Focus</h4>
+                <h4 className="text-label">Global Standards</h4>
                 <p className="text-p-small">
-                  We are the bridge for small and medium-sized businesses looking to break into international markets without the overhead of a massive corporation.
+                  We build for businesses across the globe, ensuring every line of code meets international standards for speed, security, and performance.
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@ export function PhilosophySection() {
 
           <div className="pt-12 border-t border-border">
             <p className="text-p-large border-none pl-0 italic-none not-italic">
-              Whether you are a growing brand or an established player looking for international expansion, we provide the solution you’ve been looking for: <span className="text-accent font-medium italic">expert strategy, unbundled.</span>
+              Whether you are a growing brand or an established player, we provide the solution you’ve been looking for: <span className="text-accent font-medium italic">expert systems, custom built.</span>
             </p>
           </div>
         </div>

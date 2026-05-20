@@ -8,50 +8,54 @@ interface ServiceCard {
 
 const services: ServiceCard[] = [
   {
-    title: 'Website Creation',
+    title: 'Fullstack Development',
     description: (
       <>
-        A fast, modern website built to convert. We <span className="text-accent font-medium">hand-code</span> every line of your site to ensure it reflects your brand perfectly, loads instantly, and delivers a truly <span className="text-accent font-medium">custom experience</span>.
+        We don't just build pages; we build <span className="text-accent font-medium">complete digital infrastructures</span>. From complex backend logic to seamless frontend experiences, we focus on fullstack execution that scales with your business.
       </>
     ),
     icon: '◻',
   },
   {
-    title: 'Website Maintenance',
+    title: 'Systems Creation',
     description: (
       <>
-        Since we <span className="text-accent font-medium">hand-coded</span> your site ourselves, there is no one better to keep your ongoing bugs and crashes in line than us. We ensure your platform stays sharp, stable, and ready for scale.
-      </>
-    ),
-    icon: '↺',
-  },
-  {
-    title: 'CRM Setup',
-    description: (
-      <>
-        Whether it is a fashion e-commerce site or an architect's portfolio, everyone needs to convert viewers to clients. We give you the system, the know-how, and the ability to convert. <span className="text-accent font-medium">Custom-coded</span> sites have a <span className="text-accent font-medium">36%</span> higher chance of capturing and retaining potential clients—don't waste it.
+        We create <span className="text-accent font-medium">integrated systems</span> that automate your workflow. Whether it's connecting your CRM to your website or building custom internal tools, we focus on creating a cohesive system for your brand.
       </>
     ),
     icon: '✦',
   },
   {
-    title: 'E-Commerce Building',
+    title: 'Website Management',
     description: (
       <>
-        We build <span className="text-accent font-medium">custom-coded</span>, stunning landing pages and full storefronts for you. From product pages to secure checkout, everything is <span className="text-accent font-medium">hand-coded</span> to be as beautiful as it is functional.
+        For clients with <span className="text-accent font-medium">existing websites</span>, we provide ongoing management and updates. We ensure your platform stays sharp, stable, and secure, allowing you to focus on your core business.
+      </>
+    ),
+    icon: '↺',
+  },
+  {
+    title: 'CRM Management',
+    description: (
+      <>
+        Your CRM is the heart of your client relationships. We provide <span className="text-accent font-medium">ongoing optimization</span> and management to ensure you never miss a lead and your data remains a powerful asset.
+      </>
+    ),
+    icon: '◈',
+  },
+  {
+    title: 'Custom Website Builds',
+    description: (
+      <>
+        When you need something new, we <span className="text-accent font-medium">hand-code</span> every line. No templates, no limits—just a custom-built website designed to reflect your unique brand identity and goals.
       </>
     ),
     icon: '◆',
   },
   {
-    title: 'Data Handling',
-    description: 'Clean data flows and analytics that give you a clear picture of what\'s working. Make confident decisions instead of guessing.',
+    title: 'Automated Workflows',
+    description: 'We design and implement automated workflows that reduce manual work and increase efficiency. Turn complex tasks into simple, repeatable processes.',
     icon: '→',
-  },
-  {
-    title: 'Payment Gateway Setup',
-    description: 'Secure, reliable payment integrations so customers can pay without friction — and every transaction lands exactly where it should.',
-    icon: '◈',
   },
 ]
 
