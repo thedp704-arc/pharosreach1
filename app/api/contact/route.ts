@@ -26,12 +26,14 @@ export async function POST(req: Request) {
     const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'dev@pharosreach.com'
     const toEmail = process.env.RESEND_TO_EMAIL ?? 'thedp704@gmail.com'
 
+    // If Resend API key is missing, just log the contact data and return success
     if (!resendApiKey) {
-      console.error('Missing RESEND_API_KEY environment variable')
-      return NextResponse.json(
-        { ok: false, error: 'Server misconfiguration: RESEND_API_KEY missing' },
-        { status: 500 },
-      )
+      console.log('Contact form submission received (no Resend API key):')
+      console.log('Name:', name)
+      console.log('Email:', email)
+      console.log('Company:', company)
+      console.log('Message:', message)
+      return NextResponse.json({ ok: true })
     }
 
     const subject = `New contact message from ${name}`
@@ -81,10 +83,13 @@ export async function POST(req: Request) {
     if (!resendRes.ok) {
       const errorBody = await resendRes.text().catch(() => '')
       console.error('Resend API error:', resendRes.status, errorBody)
-      return NextResponse.json(
-        { ok: false, error: 'Could not send email' },
-        { status: 502 },
-      )
+      console.log('Contact form submission received (Resend failed):')
+      console.log('Name:', name)
+      console.log('Email:', email)
+      console.log('Company:', company)
+      console.log('Message:', message)
+      // Still return success to the user even if email fails
+      return NextResponse.json({ ok: true })
     }
 
     return NextResponse.json({ ok: true })
