@@ -55,19 +55,19 @@ export default function MonarchPage() {
             {[
               {
                 name: "Nike Air Force 1",
-                image: "https://i.imgur.com/7Z9W1Y9.png",
+                image: "/nike-air-force-1.png",
                 price: "$120",
                 description: "Iconic white leather sneaker with classic blue swoosh, perfect for everyday style and comfort."
               },
               {
                 name: "Adidas Samba",
-                image: "https://i.imgur.com/5X8V3Z2.png",
+                image: "/adidas-samba.png",
                 price: "$100",
                 description: "Timeless suede and leather sneaker with green accents, a staple of casual streetwear."
               },
               {
                 name: "Nike Air Zoom (Men)",
-                image: "https://i.imgur.com/9B0K4M6.png",
+                image: "/nike-air-zoom.png",
                 price: "$150",
                 description: "High-performance running sneaker with responsive cushioning and breathable mesh upper."
               }
