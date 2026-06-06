@@ -52,18 +52,41 @@ export default function MonarchPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
+            {[
+              {
+                name: "Nike Air Force 1",
+                image: "https://i.imgur.com/7Z9W1Y9.png",
+                price: "$120",
+                description: "Iconic white leather sneaker with classic blue swoosh, perfect for everyday style and comfort."
+              },
+              {
+                name: "Adidas Samba",
+                image: "https://i.imgur.com/5X8V3Z2.png",
+                price: "$100",
+                description: "Timeless suede and leather sneaker with green accents, a staple of casual streetwear."
+              },
+              {
+                name: "Nike Air Zoom (Men)",
+                image: "https://i.imgur.com/9B0K4M6.png",
+                price: "$150",
+                description: "High-performance running sneaker with responsive cushioning and breathable mesh upper."
+              }
+            ].map((sneaker, i) => (
               <div key={i} className="group border-[0.5px] border-border p-8 bg-[#091818] hover:border-accent/40 transition-all duration-500 relative overflow-hidden">
-                <div className="aspect-square bg-accent/5 mb-8 flex items-center justify-center relative">
+                <div className="aspect-square bg-accent/5 mb-8 flex items-center justify-center relative overflow-hidden">
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198,168,90,0.1)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                   <span className="text-label-muted italic">Sneaker Model {i}</span>
+                   <img 
+                     src={sneaker.image} 
+                     alt={sneaker.name} 
+                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" 
+                   />
                 </div>
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="section-card-title">Apex V{i}</h3>
-                  <span className="text-accent font-medium">$420</span>
+                  <h3 className="section-card-title">{sneaker.name}</h3>
+                  <span className="text-accent font-medium">{sneaker.price}</span>
                 </div>
                 <p className="text-p-small mb-8">
-                  Proprietary carbon-fiber weave with reactive cushioning systems for elite performance.
+                  {sneaker.description}
                 </p>
                 <button className="w-full border border-accent/30 py-4 btn-text hover:bg-accent/10 transition-colors">
                   View Details

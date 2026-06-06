@@ -39,7 +39,7 @@ export default function UnsolicitedDesignsPage() {
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(198,168,90,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                    <div className="flex flex-col items-center gap-2">
                      <span className="text-accent text-lg font-serif italic tracking-tighter group-hover:scale-110 transition-transform duration-500">Monarch</span>
-                     <span className="text-label-muted text-[10px]">Sneaker Concept - Live Demo</span>
+                     <span className="text-label-muted text-[10px]">Sneaker Concept</span>
                    </div>
                 </Link>
                 <div className="aspect-video bg-[#1F3A34]/30 border border-border flex items-center justify-center group hover:border-accent/30 transition-colors duration-500 overflow-hidden relative">
