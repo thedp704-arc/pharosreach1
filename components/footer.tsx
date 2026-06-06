@@ -91,13 +91,13 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
                 Pharos Reach
               </h3>
               <p className="text-p-small">
-                Expert strategy, unbundled. Strategic consultancy for global fashion and e-commerce leaders seeking transformation at scale.
+                Fullstack development and systems creation. Building the digital infrastructure your brand deserves.
               </p>
 
               <div className="space-y-2">
                 <p className="text-p-small">
                   <span className="text-foreground block mb-1">dev@pharosreach.com</span>
-                  Global offices available
+                  Delivering to 5+ countries · Hassle-free
                 </p>
               </div>
 
