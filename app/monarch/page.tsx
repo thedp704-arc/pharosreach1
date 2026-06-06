@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { RoyalDivider } from '@/components/royal-divider'
@@ -10,6 +11,30 @@ export const metadata: Metadata = {
 }
 
 export default function MonarchPage() {
+  const sneakers = [
+    {
+      slug: "nike-air-force-1",
+      name: "Nike Air Force 1",
+      image: "/nike-air-force-1.png.png",
+      price: "$120",
+      description: "Iconic white leather sneaker with classic blue swoosh, perfect for everyday style and comfort."
+    },
+    {
+      slug: "adidas-samba",
+      name: "Adidas Samba",
+      image: "/adidas-samba.png.png",
+      price: "$100",
+      description: "Timeless suede and leather sneaker with green accents, a staple of casual streetwear."
+    },
+    {
+      slug: "nike-air-zoom",
+      name: "Nike Air Zoom (Men)",
+      image: "/nike-air-zoom.png.png",
+      price: "$150",
+      description: "High-performance running sneaker with responsive cushioning and breathable mesh upper."
+    }
+  ]
+
   return (
     <main className="min-h-screen bg-[#091818] text-foreground selection:bg-accent/30">
       <Navbar />
@@ -27,10 +52,10 @@ export default function MonarchPage() {
             <p className="hero-subtitle mx-auto">
               A high-performance ecommerce demonstration showcasing custom-coded infrastructure, real-time inventory systems, and integrated lead management.
             </p>
-            <div className="flex gap-6 pt-8">
-              <button className="bg-button-cta text-[#EDE8D0] px-10 py-5 btn-text hover:bg-[#E0C878] transition-all shadow-[0_0_25px_rgba(198,168,90,0.2)]">
+            <div className="pt-8">
+              <a href="#products" className="bg-button-cta text-[#EDE8D0] px-10 py-5 btn-text hover:bg-[#E0C878] transition-all shadow-[0_0_25px_rgba(198,168,90,0.2)]">
                 Explore Collection
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -39,7 +64,7 @@ export default function MonarchPage() {
       <RoyalDivider />
 
       {/* PRODUCT DISPLAY */}
-      <section className="section-spacing px-4 md:px-8 bg-[#0F1A17]">
+      <section id="products" className="section-spacing px-4 md:px-8 bg-[#0F1A17]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-xl">
@@ -52,26 +77,7 @@ export default function MonarchPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Nike Air Force 1",
-                image: "/nike-air-force-1.png.png",
-                price: "$120",
-                description: "Iconic white leather sneaker with classic blue swoosh, perfect for everyday style and comfort."
-              },
-              {
-                name: "Adidas Samba",
-                image: "/adidas-samba.png.png",
-                price: "$100",
-                description: "Timeless suede and leather sneaker with green accents, a staple of casual streetwear."
-              },
-              {
-                name: "Nike Air Zoom (Men)",
-                image: "/nike-air-zoom.png.png",
-                price: "$150",
-                description: "High-performance running sneaker with responsive cushioning and breathable mesh upper."
-              }
-            ].map((sneaker, i) => (
+            {sneakers.map((sneaker, i) => (
               <div key={i} className="group border-[0.5px] border-border p-8 bg-[#091818] hover:border-accent/40 transition-all duration-500 relative overflow-hidden">
                 <div className="aspect-square bg-accent/5 mb-8 flex items-center justify-center relative overflow-hidden">
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(198,168,90,0.1)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -88,9 +94,9 @@ export default function MonarchPage() {
                 <p className="text-p-small mb-8">
                   {sneaker.description}
                 </p>
-                <button className="w-full border border-accent/30 py-4 btn-text hover:bg-accent/10 transition-colors">
+                <Link href={`/monarch/${sneaker.slug}`} className="w-full border border-accent/30 py-4 btn-text hover:bg-accent/10 transition-colors inline-block text-center">
                   View Details
-                </button>
+                </Link>
               </div>
             ))}
           </div>
