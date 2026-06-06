@@ -44,8 +44,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const sneaker = sneakers.find(s => s.slug === params.slug)
+export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params)
+  const sneaker = sneakers.find(s => s.slug === slug)
 
   if (!sneaker) {
     return <div>Product not found</div>
