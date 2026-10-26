@@ -96,7 +96,7 @@ export function Footer({ showContactForm = true }: { showContactForm?: boolean }
 
               <div className="space-y-2">
                 <p className="text-p-small">
-                  <span className="text-foreground block mb-1">dev@pharosreach.com</span>
+                  <span className="text-foreground block mb-1">pharosreach@gmail.com</span>
                   Delivering to 5+ countries · Hassle-free
                 </p>
               </div>

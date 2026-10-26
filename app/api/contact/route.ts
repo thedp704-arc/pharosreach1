@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     const resendApiKey = process.env.RESEND_API_KEY
     const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'dev@pharosreach.com'
-    const toEmail = process.env.RESEND_TO_EMAIL ?? 'thedp704@gmail.com'
+    const toEmail = process.env.RESEND_TO_EMAIL ?? 'pharosreach@gmail.com'
 
     // If Resend API key is missing, just log the contact data and return success
     if (!resendApiKey) {
