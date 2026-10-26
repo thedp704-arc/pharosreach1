@@ -26,20 +26,6 @@ export default function UnsolicitedDesignsPage() {
           </section>
 
           <RoyalDivider />
-
-          {/* Content placeholder for designs */}
-          <section className="py-20 px-4 md:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="aspect-video bg-[#1F3A34]/30 border border-border flex items-center justify-center group hover:border-accent/30 transition-colors duration-500 overflow-hidden relative">
-                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(198,168,90,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                   <span className="text-label-muted">Concept 02 - Coming Soon</span>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <RoyalDivider direction="right" />
         </div>
         
         <Footer showContactForm={true} />
